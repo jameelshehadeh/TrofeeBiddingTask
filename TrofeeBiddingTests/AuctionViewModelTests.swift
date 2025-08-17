@@ -56,4 +56,16 @@ final class AuctionViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.bidAmount, "")
     }
     
+    func testSimulatedBidUpdatesCurrentPriceAndRecentBids() {
+        viewModel.startNewAuction(startPrice: 50)
+
+        let bidder = Bidder(id: UUID().uuidString, name: "Bot")
+        let bid = Bid(id: UUID().uuidString, amount: 15, bidder: bidder, timestamp: .now)
+        bidSimulator.subject.send(bid)
+
+        XCTAssertEqual(viewModel.currentPrice, 65)
+        XCTAssertEqual(viewModel.recentBids.count, 1)
+        XCTAssertEqual(viewModel.recentBids.first?.bidder.name, "Bot")
+    }
+    
 }
