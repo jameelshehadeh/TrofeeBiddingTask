@@ -11,7 +11,7 @@ import SwiftUI
 struct TrofeeBiddingApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AuctionView()
         }
     }
 }
