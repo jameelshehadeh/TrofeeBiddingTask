@@ -14,7 +14,7 @@ A SwiftUI auction app featuring user bids, simulated automated bids, and a real-
 
 1. Clone the repo:
 
-git clone https://github.com/jameelshehadeh/TrofeeBidding.git
+git clone https://github.com/jameelshehadeh/TrofeeBiddingTask.git
 
 2. Open in Xcode and run on a simulator or device.
  
